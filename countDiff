@@ -1,0 +1,38 @@
+import java.util.*;
+
+class Main {
+    public static int countDiff(int arr[], int length, int num, int diff){
+        if(arr == null){
+            return -1;
+        }
+        int count = 0;
+        for(int i=0; i<length; i++){
+            
+            if(Math.abs(num - arr[i]) <= diff){
+                count++;
+            }
+        }
+        if(count == 0){
+            return -1;
+        }
+        return count;
+        
+
+    }
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int diff = sc.nextInt();
+        int n = sc.nextInt(); 
+        int arr[] = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(countDiff(arr, n, num, diff));
+    }
+
+
+
+
+}
